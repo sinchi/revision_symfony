@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+{% block title %}Voir Annonce{% endblock %}
+{% block body %}
+  <div class="row">
+    <h1>Hello {{ id|upper }}</h1>
+    <p>
+      View for id : {{ id }}
+    </p>
+    <p>
+      query: {{ query }}
+    </p>
+    <p>
+      method: {{ method }}
+    </p>
+    <p>
+      ajax: {{ ajax }}
+    </p>
+    {% for message in app.session.flashbag.get('info') %}
+      <p>Message flash: {{ message }}</p>
+    {% endfor %}
+  </div>
+{% endblock %}
